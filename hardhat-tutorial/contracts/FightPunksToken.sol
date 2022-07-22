@@ -10,7 +10,7 @@ contract FightPunksToken is ERC20, Ownable {
     IFightPunks fightPunksNFT;
 
     // Mapping to keep track of which tokenIds have been claimed
-    mapping(uint256 => bool) tokenIdClaimed;
+    mapping(uint256 => bool) public tokenIdClaimed;
 
     // Price of one Funky punk token
     uint256 public constant tokenPrice = 0.001 ether;
@@ -23,7 +23,7 @@ contract FightPunksToken is ERC20, Ownable {
     uint256 public constant tokensPerNFT = 10 * 10**18;
 
     // the max total supply is 10000 for Fight punks Tokens
-    uint256 public constant maxTotalSupply = 10000 * 10 * 18;
+    uint256 public constant maxTotalSupply = 10000 * 10**18;
 
     constructor(address _fightpunksContract) ERC20("Fight Punk Token", "FP") {
         fightPunksNFT = IFightPunks(_fightpunksContract);
